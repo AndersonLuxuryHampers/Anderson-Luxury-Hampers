@@ -1,13 +1,28 @@
 # Anderson Luxury Hampers
 
-A responsive bilingual (Indonesian/English) landing website for Anderson Luxury Hampers.
+An Indonesian-first, bilingual (Bahasa Indonesia / English) luxury gifting website for Anderson Luxury Hampers.
 
-## Publish with GitHub Pages
-1. Open **Settings → Pages** in this repository.
-2. Under Build and deployment, select **Deploy from a branch**.
-3. Select branch **main** and folder **/(root)**, then Save.
-4. The published site URL is https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/
+## Live website
 
-Contact links in the page: andersonhampers@gmail.com · WhatsApp +62 896-7364-2072 · Facebook.
+https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/
 
-Images are linked from Unsplash. Google Fonts provide the display and body typography.
+## Brand and site features
+
+- Indonesian is the default language; visitors can switch to English with the ID / EN control.
+- Responsive layout for desktop, tablet and mobile.
+- Collections for chocolate and gourmet gifts, beauty and self-care, corporate hampers, tumblers, and celebration gifts.
+- Product photography is stored locally in the repository under `images/`.
+- WhatsApp enquiry: https://wa.me/6289673642072
+- Email: andersonhampers@gmail.com
+- Facebook: https://www.facebook.com/profile.php?id=61576396354021
+
+## Publishing
+
+The GitHub Actions workflow at `.github/workflows/pages.yml` publishes the repository root to GitHub Pages whenever changes are pushed to `main`. It can also be started manually from the Actions tab.
+
+## Main files
+
+- `index.html` — live bilingual homepage, styling and language-switching behavior.
+- `preview.html` — retained design preview.
+- `images/` — local product and collection photography.
+- `.github/workflows/pages.yml` — GitHub Pages deployment workflow.
