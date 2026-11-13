@@ -10,7 +10,7 @@
 .header .brand{flex:0 0 auto}
 .header .links{flex:1;justify-content:flex-end;align-items:center;gap:clamp(10px,1.45vw,20px);font-size:clamp(9px,.85vw,11px)}
 .header .tools{flex:0 0 auto}
-.hero{position:relative;isolation:isolate;min-height:clamp(390px,48vw,570px);padding:clamp(58px,8vw,95px) 0;background-image:linear-gradient(90deg,rgba(255,246,234,.94) 0%,rgba(255,246,234,.82) 46%,rgba(255,246,234,.20) 100%),url("../images/Corporate7.jpg');background-size:cover;background-position:center;display:flex;align-items:center}
+.hero{position:relative;isolation:isolate;min-height:clamp(390px,48vw,570px);padding:clamp(58px,8vw,95px) 0;background-image:linear-gradient(90deg,rgba(255,246,234,.94) 0%,rgba(255,246,234,.82) 46%,rgba(255,246,234,.20) 100%),url("../images/Corporate7.jpg");background-size:cover;background-position:center;display:flex;align-items:center}
 .hero:before{display:none}
 .hero .wrap{position:relative;z-index:1}
 .hero .hero-grid{display:block;max-width:1160px}
@@ -29,7 +29,7 @@
  .header .links{display:flex;position:static;order:3;flex:1 0 100%;overflow-x:auto;white-space:nowrap;justify-content:flex-start;gap:19px;padding:9px 0 7px;border:0;background:transparent;scrollbar-width:none}
  .header .links::-webkit-scrollbar{display:none}
  .header .links a{font-size:9px;flex:0 0 auto}
- .hero{min-height:440px;padding:52px 0 58px;background-position:58% center;background-image:linear-gradient(90deg,rgba(255,246,234,.94) 0%,rgba(255,246,234,.78) 54%,rgba(255,246,234,.20) 100%),url("../images/Corporate7.jpg')}
+ .hero{min-height:440px;padding:52px 0 58px;background-position:58% center;background-image:linear-gradient(90deg,rgba(255,246,234,.94) 0%,rgba(255,246,234,.78) 54%,rgba(255,246,234,.20) 100%),url("../images/Corporate7.jpg")}
  .hero .hero-inner{max-width:540px}
  .hero h1{font-size:clamp(39px,8vw,54px)}
  .hero p{font-size:13px;line-height:1.8}
@@ -71,6 +71,27 @@ body.is-leaving{opacity:0;transform:translateY(5px);transition:opacity .22s,tran
 @media(hover:hover) and (pointer:fine){.card:hover img,.item:hover img,.collection-card:hover img,.product-card:hover img{transform:scale(1.035)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body{animation:none!important;transition:none!important}[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}.hero .wrap,.hero-content,.hero-inner,.hero-copy,.hero h1,.hero:after,.anderson-ornament path{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}.anderson-progress{display:none!important}}
 
+
+/* ENGLISH PAGE REPAIR — responsive language controls and hero image */
+.lang{display:flex;align-items:center;gap:8px;white-space:nowrap;flex-shrink:0}
+.lang a{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:30px;padding:5px 8px;border:1px solid var(--champ);font-size:10px;letter-spacing:1px;line-height:1}
+.lang a.active{background:var(--brown);color:#fff;border-color:var(--brown)}
+.mevy-hero .anderson-ornament{display:none!important}
+@media(max-width:760px){
+ .header .nav{gap:10px}
+ .header .brand{min-width:112px}
+ .header .tools{gap:8px}
+ .header .lang{gap:6px}
+ .header .lang a{min-width:34px;min-height:32px}
+ .header .links{width:100%;flex:1 0 100%;padding:10px 0 8px;gap:18px}
+ .header .links a{display:inline-flex;align-items:center;min-height:30px;font-size:10px;letter-spacing:.65px}
+}
+@media(max-width:430px){
+ .header .brand{font-size:20px}
+ .header .brand small{font-size:7px;letter-spacing:2.5px}
+ .header .links{gap:15px}
+ .header .links a{font-size:9px}
+}
 </style></head><body>
 <div class="top" data-en="Thoughtfully curated · Beautifully presented" data-id="Dikurasi dengan cermat · Disajikan dengan indah">Dikurasi dengan cermat · Disajikan dengan indah</div>
 <header class="header"><div class="wrap nav"><a class="brand" href="index.html">ANDERSON<small>LUXURY HAMPERS</small></a><nav class="links" id="links" aria-label="Navigasi utama"><a href="index.html" data-en="Home" data-id="Beranda">Beranda</a><a href="story.html" data-en="Our Story" data-id="Tentang Kami">Tentang Kami</a><a href="collections.html" data-en="Collections" data-id="Koleksi">Koleksi</a><a href="beauty.html" data-en="Beauty" data-id="Beauty">Beauty</a><a href="corporate.html" data-en="Corporate" data-id="Korporat">Korporat</a><a href="contact.html" data-en="Contact" data-id="Kontak">Kontak</a></nav><div class="tools"><div class="lang" aria-label="Choose language"><a href="../corporate.html" aria-label="Bahasa Indonesia">ID</a><a class="active" href="corporate.html" aria-label="English" aria-current="page">EN</a></div><button class="menu" id="menu" type="button" aria-label="Buka menu">☰</button></div></div></header>
