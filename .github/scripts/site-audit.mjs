@@ -63,11 +63,12 @@ for (const page of pages) {
   for (const m of html.matchAll(/\bsrcset=["']([^"']+)["']/gi)) {
     for (const candidate of m[1].split(",")) assetRefs.push(candidate.trim().split(/\s+/)[0]);
   }
+  for (const m of html.matchAll(/<link\b(?=[^>]*rel=["']preload["'])[^>]*href=["']([^"']+)["']/gi)) assetRefs.push(m[1]);
   const styleBlocks = [...html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)].map(m => m[1]);
   for (const css of styleBlocks) {
     for (const m of css.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/gi)) assetRefs.push(m[1]);
     if (/:focus-visible/.test(css) === false) errors.push(`${page}: missing visible keyboard focus styling`);
-    if (/\\\\n/.test(css)) errors.push(`${page}: CSS contains a literal escaped newline`);
+    if (/\\n/.test(css)) errors.push(`${page}: CSS contains a literal escaped newline`);
   }
   for (const ref of assetRefs) {
     if (/^(https?:|data:|blob:|#)/i.test(ref)) continue;
