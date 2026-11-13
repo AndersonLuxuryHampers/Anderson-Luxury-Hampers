@@ -16,6 +16,38 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Optimise large product photography for the published site
+        run: |
+          npm install --no-save sharp
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const sharp = require('sharp');
+          const assets = ['Beauty19.jpg','Beauty20.jpg','Beauty21.jpg','Tumbler8.jpg','Tumbler9.jpg','Tumbler10.jpg'];
+          (async () => {
+            for (const name of assets) {
+              const input = path.join('images', name);
+              const output = input.replace(/\\.jpg$/i, '.webp');
+              const before = fs.statSync(input).size;
+              await sharp(input).rotate().webp({ quality: 84, effort: 6, smartSubsample: true }).toFile(output);
+              const after = fs.statSync(output).size;
+              console.log(`${name}: ${before} -> ${after} bytes (${Math.round((1-after/before)*100)}% smaller)`);
+            }
+            function walk(dir) {
+              for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+                if (entry.name === '.git' || entry.name === 'node_modules') continue;
+                const full = path.join(dir, entry.name);
+                if (entry.isDirectory()) walk(full);
+                else if (/\\.(html|css)$/i.test(entry.name)) {
+                  let source = fs.readFileSync(full, 'utf8');
+                  for (const name of assets) source = source.replaceAll(name, name.replace(/\\.jpg$/i, '.webp'));
+                  fs.writeFileSync(full, source);
+                }
+              }
+            }
+            walk('.');
+          })().catch(error => { console.error(error); process.exit(1); });
+          NODE
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
