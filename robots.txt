@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/sitemap.xml
