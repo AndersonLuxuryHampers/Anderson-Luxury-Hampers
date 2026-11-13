@@ -115,7 +115,7 @@ body.is-leaving{opacity:0;transform:translateY(5px);transition:opacity .22s,tran
 </form></div>
 </div></section>
 </main>
-<footer class="footer"><div class="wrap footer-row"><div><div class="footer-brand">ANDERSON LUXURY HAMPERS</div><p data-en="Thoughtfully curated. Beautifully presented. Made to mean more." data-id="Dikurasi dengan cermat. Disajikan dengan indah. Penuh makna.">Dikurasi dengan cermat. Disajikan dengan indah. Penuh makna.</p></div><p>© <span id="year"></span> Anderson Luxury Hampers</p></div></footer>
+<footer class="footer"><div class="wrap footer-row"><div><div class="footer-brand">ANDERSON LUXURY HAMPERS</div><p data-en="Thoughtfully curated. Beautifully presented. Made to mean more." data-id="Dikurasi dengan cermat. Disajikan dengan indah. Penuh makna.">Dikurasi dengan cermat. Disajikan dengan indah. Penuh makna.</p></div><p>© <span id="year"></span> Anderson Luxury Hampers</p></div><div class="footer-legal" style="padding:16px 0;text-align:center;font-size:11px;letter-spacing:.5px"><a href="privacy.html">Kebijakan Privasi</a> · <a href="delivery.html">Pengiriman</a> · <a href="faq.html">FAQ</a></div></footer>
 <script>
 const idBtn=document.getElementById("idBtn"),enBtn=document.getElementById("enBtn");
 function setLanguage(lang){document.documentElement.lang=lang;document.querySelectorAll("[data-id][data-en]").forEach(el=>{el.innerHTML=el.dataset[lang]});document.querySelectorAll("[data-placeholder-id][data-placeholder-en]").forEach(el=>{el.placeholder=el.dataset["placeholder-"+lang]});idBtn.classList.toggle("active",lang==="id");enBtn.classList.toggle("active",lang==="en");idBtn.setAttribute("aria-pressed",String(lang==="id"));enBtn.setAttribute("aria-pressed",String(lang==="en"))}
