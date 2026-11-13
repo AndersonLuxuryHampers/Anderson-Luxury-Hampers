@@ -48,6 +48,8 @@ jobs:
             walk('.');
           })().catch(error => { console.error(error); process.exit(1); });
           NODE
+      - name: Run bilingual site quality checks
+        run: node .github/scripts/site-audit.mjs
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
