@@ -73,6 +73,23 @@ body.is-leaving{opacity:0;transform:translateY(5px);transition:opacity .22s,tran
 @media(hover:hover) and (pointer:fine){.card:hover img,.item:hover img,.collection-card:hover img,.product-card:hover img{transform:scale(1.035)}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}body{animation:none!important;transition:none!important}[data-reveal]{opacity:1!important;transform:none!important;transition:none!important}.hero .wrap,.hero-content,.hero-inner,.hero-copy,.hero h1,.hero:after,.anderson-ornament path{animation:none!important;opacity:1!important;stroke-dashoffset:0!important}.anderson-progress{display:none!important}}
 
+
+/* MOBILE REFINEMENT — compact header, accessible dropdown and contained proof strip */
+@media (max-width:760px){
+html,body{max-width:100%}body{overflow-x:clip}
+.header .nav{position:relative;width:min(1200px,calc(100% - 32px));min-height:74px;flex-wrap:nowrap;justify-content:space-between;gap:8px;padding:9px 0}
+.header .brand{flex:0 1 auto;min-width:0;white-space:nowrap;font-size:20px;letter-spacing:.8px}.header .brand small{font-size:7.5px;letter-spacing:2.8px;margin-top:5px}
+.header .tools{display:flex;flex:0 0 auto;align-items:center;gap:7px;margin-left:auto}.header .lang{display:flex;flex:0 0 auto;align-items:center;gap:4px;white-space:nowrap}
+.header .lang button,.header .lang a{box-sizing:border-box;min-width:34px;padding:7px 8px!important;text-align:center;line-height:1.2}
+.header .nav-cta{display:none!important}.header .menu{display:grid!important;flex:0 0 38px;place-items:center;width:38px;height:38px;padding:0;border:1px solid var(--champ);background:transparent;color:var(--brown);font-size:20px;line-height:1}
+.header .links,.header .links.open{position:absolute;top:100%;left:0;right:0;z-index:60;display:none;width:100%;max-height:min(70vh,440px);overflow-y:auto;flex:none;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;padding:8px 18px;background:rgba(255,253,248,.99);border:1px solid var(--line);border-top:0;box-shadow:0 18px 35px rgba(45,28,21,.12);white-space:normal}
+.header .links.open{display:flex}.header .links a{display:block;width:100%;padding:11px 0;border-bottom:1px solid var(--line);font-size:10px;line-height:1.5;letter-spacing:1px}.header .links a:last-child{border-bottom:0}
+.mevy-hero{min-height:0;padding:48px 0 52px}.mevy-hero .hero-copy{width:100%;max-width:560px;min-width:0}.mevy-hero h1{max-width:100%;font-size:clamp(39px,7.5vw,52px);line-height:1.06;overflow-wrap:normal}.mevy-hero p{max-width:100%;font-size:13.5px;line-height:1.8}
+.hero-proof{overflow:hidden}.hero-proof .proof-row{display:grid;width:min(1200px,calc(100% - 28px));min-width:0;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding:18px 0}
+.hero-proof .proof-item{min-width:0;padding:5px 7px;overflow-wrap:anywhere;text-align:center}.hero-proof .proof-item b{display:block;font-size:clamp(10px,2.9vw,13px);line-height:1.35;overflow-wrap:anywhere}.hero-proof .proof-item span{display:block;margin-top:5px;font-size:clamp(7px,1.9vw,8px);line-height:1.45;letter-spacing:.35px;overflow-wrap:anywhere}
+}
+@media(max-width:380px){.header .nav{width:calc(100% - 24px);gap:5px}.header .brand{font-size:18px}.header .brand small{font-size:7px;letter-spacing:2.3px}.header .tools{gap:5px}.header .lang button,.header .lang a{min-width:30px;padding:6px 6px!important}.header .menu{flex-basis:34px;width:34px;height:36px}.hero-proof .proof-row{width:calc(100% - 18px)}.hero-proof .proof-item{padding-left:4px;padding-right:4px}}
+
 </style><link rel="icon" type="image/svg+xml" href="../favicon.svg"><link rel="canonical" href="https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/en/gourmet.html"><meta property="og:type" content="website"><meta property="og:title" content="Gourmet & Celebrations | Anderson Luxury Hampers"><meta property="og:description" content="Explore thoughtfully curated luxury gifts from Anderson Luxury Hampers. Personalised presentation and enquiries via WhatsApp."><meta property="og:url" content="https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/en/gourmet.html"><meta property="og:image" content="https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/images/Corporate10.jpg"><meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" hreflang="id" href="https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/gourmet.html">
 <link rel="alternate" hreflang="en" href="https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/en/gourmet.html">
