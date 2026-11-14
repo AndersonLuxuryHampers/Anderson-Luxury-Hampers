@@ -393,7 +393,7 @@ const menu=document.getElementById("menu"),links=document.getElementById("links"
  if(hero&&!reduce){let ticking=false;window.addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{const rect=hero.getBoundingClientRect();if(rect.bottom>0&&rect.top<innerHeight)hero.style.backgroundPosition='center calc(50% + '+Math.round(-rect.top*.10)+'px)';ticking=false})},{passive:true})}
  if(hero&&!hero.querySelector('.anderson-ornament')){const ns='http://www.w3.org/2000/svg';const svg=document.createElementNS(ns,'svg');svg.setAttribute('class','anderson-ornament');svg.setAttribute('viewBox','0 0 120 120');svg.setAttribute('aria-hidden','true');const path=document.createElementNS(ns,'path');path.setAttribute('d','M60 5 C90 5 115 30 115 60 C115 90 90 115 60 115 C30 115 5 90 5 60 C5 30 30 5 60 5 M60 22 C81 22 98 39 98 60 C98 81 81 98 60 98 C39 98 22 81 22 60 C22 39 39 22 60 22 M60 39 C72 39 81 48 81 60 C81 72 72 81 60 81');svg.appendChild(path);hero.appendChild(svg)}
  if(!reduce&&matchMedia('(hover:hover) and (pointer:fine)').matches){document.querySelectorAll('.card,.item,.collection-card,.product-card').forEach(card=>{card.addEventListener('pointermove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform='perspective(900px) rotateX('+(-y*2.5)+'deg) rotateY('+(x*2.5)+'deg) translateY(-3px)' });card.addEventListener('pointerleave',()=>card.style.transform='')})}
- document.querySelectorAll('a[href]').forEach(link=>{const href=link.getAttribute('href');if(!href||href.startsWith('#')||href.startsWith('mailto:')||href.startsWith('tel:')||href.startsWith('https://wa.me')||link.target==='_blank'||link.hasAttribute('download'))return;let url;try{url=new URL(href,location.href)}catch(e){return}if(url.origin!==location.origin)return;link.addEventListener('click',e=>{if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||e.button!==0||reduce)return;e.preventDefault();document.body.classList.add('is-leaving');setTimeout(()=>location.href=url.href,220)})});
+ 
 })();
 </script>
 <script>
@@ -425,4 +425,73 @@ const menu=document.getElementById("menu"),links=document.getElementById("links"
 })();
 </script>
 
+<script>
+/* ANDERSON CLIENT-SIDE PAGE NAVIGATION */
+(function(){
+  if(window.__andersonSpaInstalled)return;
+  window.__andersonSpaInstalled=true;
+  const SITE_ROOT="/Anderson-Luxury-Hampers/";
+  let navigating=false;
+  async function visit(url,options){
+    options=options||{};
+    if(navigating)return;
+    navigating=true;
+    document.documentElement.classList.add("spa-loading");
+    try{
+      const response=await fetch(url.href,{headers:{"X-Requested-With":"Anderson-SPA"}});
+      if(!response.ok)throw new Error("Page request failed");
+      const markup=await response.text();
+      const next=new DOMParser().parseFromString(markup,"text/html");
+      if(!next.querySelector("main")||!document.querySelector("main"))throw new Error("Page structure unavailable");
+      document.head.innerHTML=next.head.innerHTML;
+      document.documentElement.lang=next.documentElement.lang||"id";
+      Array.from(document.body.attributes).forEach(a=>document.body.removeAttribute(a.name));
+      Array.from(next.body.attributes).forEach(a=>document.body.setAttribute(a.name,a.value));
+      document.body.innerHTML=next.body.innerHTML;
+      document.title=next.title||document.title;
+      if(options.push!==false)history.pushState({anderson:true},"",url.href);
+      const scripts=Array.from(document.querySelectorAll("script"));
+      for(const oldScript of scripts){
+        if((oldScript.getAttribute("type")||"").toLowerCase()==="application/ld+json")continue;
+        const fresh=document.createElement("script");
+        Array.from(oldScript.attributes).forEach(a=>fresh.setAttribute(a.name,a.value));
+        fresh.textContent=oldScript.textContent;
+        oldScript.replaceWith(fresh);
+      }
+      if(url.hash){
+        const id=decodeURIComponent(url.hash.slice(1));
+        requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView({behavior:"smooth",block:"start"}));
+      }else if(options.scroll!==false){
+        window.scrollTo({top:0,behavior:"instant"});
+      }
+      document.dispatchEvent(new CustomEvent("anderson:navigation",{detail:{url:url.href}}));
+    }catch(error){
+      window.location.assign(url.href);
+    }finally{
+      navigating=false;
+      document.documentElement.classList.remove("spa-loading");
+    }
+  }
+  document.addEventListener("click",function(event){
+    const link=event.target.closest&&event.target.closest("a[href]");
+    if(!link||event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+    if(link.target&&link.target!=="_self"||link.hasAttribute("download"))return;
+    const href=link.getAttribute("href");
+    if(!href||href.startsWith("mailto:")||href.startsWith("tel:")||href.startsWith("javascript:"))return;
+    let url;
+    try{url=new URL(href,window.location.href)}catch(error){return}
+    if(url.origin!==window.location.origin||!url.pathname.startsWith(SITE_ROOT))return;
+    if(url.pathname===window.location.pathname&&url.search===window.location.search){
+      if(url.hash)return;
+      event.preventDefault();
+      window.scrollTo({top:0,behavior:"smooth"});
+      return;
+    }
+    if(!/\.html?$/i.test(url.pathname))return;
+    event.preventDefault();
+    visit(url,{push:true,scroll:true});
+  });
+  window.addEventListener("popstate",function(){visit(new URL(window.location.href),{push:false,scroll:true})});
+})();
+</script>
 </body></html>
