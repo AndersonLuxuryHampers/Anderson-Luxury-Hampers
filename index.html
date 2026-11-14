@@ -462,7 +462,7 @@ const menu=document.getElementById("menu"),links=document.getElementById("links"
         const id=decodeURIComponent(url.hash.slice(1));
         requestAnimationFrame(()=>document.getElementById(id)?.scrollIntoView({behavior:"smooth",block:"start"}));
       }else if(options.scroll!==false){
-        window.scrollTo({top:0,behavior:"instant"});
+        window.scrollTo({top:0,behavior:"auto"});
       }
       document.dispatchEvent(new CustomEvent("anderson:navigation",{detail:{url:url.href}}));
     }catch(error){
