@@ -339,6 +339,21 @@ html,body{max-width:100%}body{overflow-x:clip}
 }
 @media(max-width:380px){.header .nav{width:calc(100% - 24px);gap:5px}.header .brand{font-size:18px}.header .brand small{font-size:7px;letter-spacing:2.3px}.header .tools{gap:5px}.header .lang button,.header .lang a{min-width:30px;padding:6px 6px!important}.header .menu{flex-basis:34px;width:34px;height:36px}.hero-proof .proof-row{width:calc(100% - 18px)}.hero-proof .proof-item{padding-left:4px;padding-right:4px}}
 
+
+/* Homepage featured product samples */
+.home-samples{margin-top:54px;padding-top:36px;border-top:1px solid var(--line)}
+.home-sample-group+.home-sample-group{margin-top:38px}
+.home-sample-heading{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:0 0 16px}
+.home-sample-heading h3{font:clamp(23px,2.7vw,31px) "Playfair Display",serif;font-weight:500;margin:0}
+.home-sample-heading span{font-size:9px;letter-spacing:2px;color:var(--gold);text-transform:uppercase}
+.home-sample-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.home-sample-card{margin:0;min-width:0;background:#fff;border:1px solid var(--line);padding:7px;overflow:hidden}
+.home-sample-card img{width:100%;aspect-ratio:4/4.5;object-fit:cover;transition:transform .65s ease}
+.home-sample-card:hover img{transform:scale(1.035)}
+.home-sample-card figcaption{padding:9px 5px 4px;font-size:10px;letter-spacing:.45px;color:var(--muted)}
+@media(max-width:900px){.home-sample-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}}
+@media(max-width:680px){.home-samples{margin-top:38px;padding-top:28px}.home-sample-group+.home-sample-group{margin-top:27px}.home-sample-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.home-sample-card{padding:6px}.home-sample-heading h3{font-size:22px}.home-sample-heading span{font-size:8px;letter-spacing:1.2px}}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="id" href="https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/index.html">
@@ -359,6 +374,66 @@ html,body{max-width:100%}body{overflow-x:clip}
 <article class="card"><a href="corporate.html"><img src="../images/Corporate7.jpg" alt="Corporate gifting collection" loading="lazy"><div class="card-body"><small>03 · Business</small><h3 data-en="Corporate Gifting" data-id="Hadiah Korporat">Hadiah Korporat</h3><p data-en="Refined gifting for clients, teams, partners and special business occasions." data-id="Hadiah elegan untuk klien, tim, mitra, dan berbagai acara perusahaan.">Hadiah elegan untuk klien, tim, mitra, dan berbagai acara perusahaan.</p><span class="collection-link" data-en="Explore collection →" data-id="Jelajahi koleksi →">Jelajahi koleksi →</span></div></a></article>
 <article class="card"><a href="tumblers.html"><img src="../images/Tumbler8.jpg" alt="Personal tumbler collection" loading="lazy"><div class="card-body"><small>04 · Personal</small><h3 data-en="Personal Tumblers" data-id="Tumbler Personal">Tumbler Personal</h3><p data-en="Personalised tumbler gifts for everyday moments and thoughtful appreciation." data-id="Hadiah tumbler personal untuk keseharian dan bentuk apresiasi.">Hadiah tumbler personal untuk keseharian dan bentuk apresiasi.</p><span class="collection-link" data-en="Explore collection →" data-id="Jelajahi koleksi →">Jelajahi koleksi →</span></div></a></article>
 <article class="card"><a href="gourmet.html"><img src="../images/Wine7.jpg" alt="Gourmet and celebration collection" loading="lazy"><div class="card-body"><small>05 · Celebrations</small><h3 data-en="Gourmet & Celebrations" data-id="Gourmet & Perayaan">Gourmet & Perayaan</h3><p data-en="Thoughtful selections to make celebrations feel even more memorable." data-id="Pilihan hadiah untuk menjadikan perayaan semakin berkesan.">Pilihan hadiah untuk menjadikan perayaan semakin berkesan.</p><span class="collection-link" data-en="Explore collection →" data-id="Jelajahi koleksi →">Jelajahi koleksi →</span></div></a></article>
+
+<div class="home-samples" id="home-samples">
+ <div class="section-head" style="margin-bottom:30px">
+  <div class="eyebrow" data-en="A closer look at our collections" data-id="Lihat lebih dekat koleksi kami">A closer look at our collections</div>
+  <h2 data-en="Thoughtful gifts, beautifully made" data-id="Hadiah istimewa dalam setiap detail">Thoughtful gifts, beautifully made</h2>
+  <p data-en="Explore a selection of pieces from our signature collections." data-id="Jelajahi pilihan produk dari koleksi unggulan kami.">Explore a selection of pieces from our signature collections.</p>
+ </div>
+ 
+ <div class="home-sample-group">
+  <div class="home-sample-heading">
+   <h3 data-en="Beauty & Self-Care" data-id="Beauty & Perawatan Diri">Beauty & Self-Care</h3>
+   <span data-en="Selected pieces" data-id="Pilihan unggulan">Selected pieces</span>
+  </div>
+  <div class="home-sample-grid">
+   <figure class="home-sample-card"><img src="../images/Beauty19.jpg" alt="Beauty and self-care hamper 1" loading="lazy" decoding="async"><figcaption>Beauty & Self-Care · 01</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Beauty20.jpg" alt="Beauty and self-care hamper 2" loading="lazy" decoding="async"><figcaption>Beauty & Self-Care · 02</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Beauty21.jpg" alt="Beauty and self-care hamper 3" loading="lazy" decoding="async"><figcaption>Beauty & Self-Care · 03</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Beauty22.jpg" alt="Beauty and self-care hamper 4" loading="lazy" decoding="async"><figcaption>Beauty & Self-Care · 04</figcaption></figure>
+  </div>
+ </div>
+ 
+ <div class="home-sample-group">
+  <div class="home-sample-heading">
+   <h3 data-en="Personal Tumblers" data-id="Tumbler Personal">Personal Tumblers</h3>
+   <span data-en="Selected pieces" data-id="Pilihan unggulan">Selected pieces</span>
+  </div>
+  <div class="home-sample-grid">
+   <figure class="home-sample-card"><img src="../images/Tumbler8.jpg" alt="Personalised gift tumbler 1" loading="lazy" decoding="async"><figcaption>Personal Tumblers · 01</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Tumbler9.jpg" alt="Personalised gift tumbler 2" loading="lazy" decoding="async"><figcaption>Personal Tumblers · 02</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Tumbler10.jpg" alt="Personalised gift tumbler 3" loading="lazy" decoding="async"><figcaption>Personal Tumblers · 03</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Tumbler11.jpg" alt="Personalised gift tumbler 4" loading="lazy" decoding="async"><figcaption>Personal Tumblers · 04</figcaption></figure>
+  </div>
+ </div>
+ 
+ <div class="home-sample-group">
+  <div class="home-sample-heading">
+   <h3 data-en="Chocolate Hampers" data-id="Hampers Cokelat">Chocolate Hampers</h3>
+   <span data-en="Selected pieces" data-id="Pilihan unggulan">Selected pieces</span>
+  </div>
+  <div class="home-sample-grid">
+   <figure class="home-sample-card"><img src="../images/Chocolate13.jpg" alt="Premium chocolate hamper 1" loading="lazy" decoding="async"><figcaption>Chocolate Hampers · 01</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Chocolate14.jpg" alt="Premium chocolate hamper 2" loading="lazy" decoding="async"><figcaption>Chocolate Hampers · 02</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Chocolate15.jpg" alt="Premium chocolate hamper 3" loading="lazy" decoding="async"><figcaption>Chocolate Hampers · 03</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Chocolate16.jpg" alt="Premium chocolate hamper 4" loading="lazy" decoding="async"><figcaption>Chocolate Hampers · 04</figcaption></figure>
+  </div>
+ </div>
+ 
+ <div class="home-sample-group">
+  <div class="home-sample-heading">
+   <h3 data-en="Corporate Hampers" data-id="Hampers Korporat">Corporate Hampers</h3>
+   <span data-en="Selected pieces" data-id="Pilihan unggulan">Selected pieces</span>
+  </div>
+  <div class="home-sample-grid">
+   <figure class="home-sample-card"><img src="../images/Corporate7.jpg" alt="Corporate gifting hamper 1" loading="lazy" decoding="async"><figcaption>Corporate Hampers · 01</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Corporate8.jpg" alt="Corporate gifting hamper 2" loading="lazy" decoding="async"><figcaption>Corporate Hampers · 02</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Corporate9.jpg" alt="Corporate gifting hamper 3" loading="lazy" decoding="async"><figcaption>Corporate Hampers · 03</figcaption></figure>
+   <figure class="home-sample-card"><img src="../images/Corporate10.jpg" alt="Corporate gifting hamper 4" loading="lazy" decoding="async"><figcaption>Corporate Hampers · 04</figcaption></figure>
+  </div>
+ </div>
+</div>
 </div></div></section>
 <section class="section" id="story"><div class="wrap story"><img src="../images/Chocolate14.jpg" alt="Carefully curated Anderson gift" loading="lazy"><div><div class="eyebrow" data-en="The Anderson touch" data-id="Sentuhan Anderson">Sentuhan Anderson</div><h2 data-en="Gifting is an expression of how much we care." data-id="Hadiah adalah ungkapan betapa berartinya seseorang.">Hadiah adalah ungkapan betapa berartinya seseorang.</h2><p data-en="At Anderson Luxury Hampers, we believe a gift is more than what is inside the box. It is a thoughtful expression, a lasting memory and a beautiful way to celebrate the people who matter. Every detail is considered, from the selection to the final presentation." data-id="Di Anderson Luxury Hampers, kami percaya bahwa hadiah lebih dari sekadar isi sebuah kotak. Hadiah adalah ungkapan perhatian, kenangan yang bertahan, dan cara indah untuk merayakan orang-orang yang berarti. Setiap detail diperhatikan, mulai dari pemilihan hingga presentasi akhir.">Di Anderson Luxury Hampers, kami percaya bahwa hadiah lebih dari sekadar isi sebuah kotak. Hadiah adalah ungkapan perhatian, kenangan yang bertahan, dan cara indah untuk merayakan orang-orang yang berarti. Setiap detail diperhatikan, mulai dari pemilihan hingga presentasi akhir.</p><div class="values"><div class="value"><b>Thoughtfully curated</b><small data-en="Selected with intention" data-id="Dipilih dengan penuh perhatian">Dipilih dengan penuh perhatian</small></div><div class="value"><b>Elegant presentation</b><small data-en="Beautiful in every detail" data-id="Indah dalam setiap detail">Indah dalam setiap detail</small></div><div class="value"><b>Personal touch</b><small data-en="Made meaningful for you" data-id="Dibuat bermakna untuk Anda">Dibuat bermakna untuk Anda</small></div><div class="value"><b>Made to celebrate</b><small data-en="For moments worth remembering" data-id="Untuk momen yang layak dikenang">Untuk momen yang layak dikenang</small></div></div></div></div></section>
 <section class="collection section" id="beauty"><div class="section-head"><span class="eyebrow" data-en="Beauty & Self-Care" data-id="Keindahan & Perawatan Diri">Keindahan & Perawatan Diri</span><h2 data-en="Beauty & Self-Care" data-id="Keindahan & Perawatan Diri">Keindahan & Perawatan Diri</h2><p data-en="Thoughtfully selected pieces, beautifully presented for meaningful moments." data-id="Pilihan istimewa yang ditata dengan indah untuk setiap momen bermakna.">Pilihan istimewa yang ditata dengan indah untuk setiap momen bermakna.</p></div><div class="gallery"><figure><img src="../images/Beauty19.jpg" alt="Beauty & Self-Care 1" loading="lazy"><figcaption>Beauty & Self-Care <span>01</span></figcaption></figure><figure><img src="../images/Beauty20.jpg" alt="Beauty & Self-Care 2" loading="lazy"><figcaption>Beauty & Self-Care <span>02</span></figcaption></figure><figure><img src="../images/Beauty21.jpg" alt="Beauty & Self-Care 3" loading="lazy"><figcaption>Beauty & Self-Care <span>03</span></figcaption></figure><figure><img src="../images/Beauty22.jpg" alt="Beauty & Self-Care 4" loading="lazy"><figcaption>Beauty & Self-Care <span>04</span></figcaption></figure><figure><img src="../images/Beauty23.jpg" alt="Beauty & Self-Care 5" loading="lazy"><figcaption>Beauty & Self-Care <span>05</span></figcaption></figure><figure><img src="../images/Beauty24.jpg" alt="Beauty & Self-Care 6" loading="lazy"><figcaption>Beauty & Self-Care <span>06</span></figcaption></figure><figure><img src="../images/Beauty25.jpg" alt="Beauty & Self-Care 7" loading="lazy"><figcaption>Beauty & Self-Care <span>07</span></figcaption></figure><figure><img src="../images/Beauty26.jpg" alt="Beauty & Self-Care 8" loading="lazy"><figcaption>Beauty & Self-Care <span>08</span></figcaption></figure><figure><img src="../images/Beauty27.jpg" alt="Beauty & Self-Care 9" loading="lazy"><figcaption>Beauty & Self-Care <span>09</span></figcaption></figure><figure><img src="../images/Beauty28.jpg" alt="Beauty & Self-Care 10" loading="lazy"><figcaption>Beauty & Self-Care <span>10</span></figcaption></figure><figure><img src="../images/Beauty29.jpg" alt="Beauty & Self-Care 11" loading="lazy"><figcaption>Beauty & Self-Care <span>11</span></figcaption></figure><figure><img src="../images/Beauty30.jpg" alt="Beauty & Self-Care 12" loading="lazy"><figcaption>Beauty & Self-Care <span>12</span></figcaption></figure><figure><img src="../images/Beauty31.jpg" alt="Beauty & Self-Care 13" loading="lazy"><figcaption>Beauty & Self-Care <span>13</span></figcaption></figure><figure><img src="../images/Beauty32.jpg" alt="Beauty & Self-Care 14" loading="lazy"><figcaption>Beauty & Self-Care <span>14</span></figcaption></figure><figure><img src="../images/Beauty33.jpg" alt="Beauty & Self-Care 15" loading="lazy"><figcaption>Beauty & Self-Care <span>15</span></figcaption></figure><figure><img src="../images/Beauty34.jpg" alt="Beauty & Self-Care 16" loading="lazy"><figcaption>Beauty & Self-Care <span>16</span></figcaption></figure></div></section>
