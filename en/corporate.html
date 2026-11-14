@@ -177,7 +177,7 @@ html,body{max-width:100%}body{overflow-x:clip}
         if((oldScript.getAttribute("type")||"").toLowerCase()==="application/ld+json")continue;
         const fresh=document.createElement("script");
         Array.from(oldScript.attributes).forEach(a=>fresh.setAttribute(a.name,a.value));
-        fresh.textContent=oldScript.textContent;
+        fresh.textContent="(function(){\n"+oldScript.textContent+"\n})();";
         oldScript.replaceWith(fresh);
       }
       if(url.hash){
