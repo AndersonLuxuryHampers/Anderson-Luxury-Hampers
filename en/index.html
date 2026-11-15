@@ -428,21 +428,19 @@ html,body{max-width:100%}body{overflow-x:clip}
 }
 
 
-/* FOUR-SECOND WELCOME LIGHTNING INTRO */
-.anderson-welcome-flash{position:absolute;inset:0;z-index:8;display:grid;place-items:center;overflow:hidden;pointer-events:none;background:rgba(20,12,8,.16);animation:anderson-welcome-fade 4s ease forwards}
-.anderson-welcome-flash:before{content:"";position:absolute;inset:0;background:#fff;opacity:0;animation:anderson-sky-flash 4s steps(1,end) forwards}
-.anderson-welcome-title{position:relative;z-index:2;margin:0;padding:clamp(15px,2.4vw,28px) clamp(24px,5vw,62px);border:1px solid rgba(239,211,155,.9);background:linear-gradient(135deg,rgba(37,22,15,.84),rgba(68,43,26,.64));box-shadow:0 12px 50px rgba(0,0,0,.3),inset 0 0 26px rgba(226,190,124,.12);color:#fff8e9;font:600 clamp(30px,6.2vw,76px)/1.1 "Playfair Display",Georgia,serif;letter-spacing:clamp(3px,.9vw,10px);text-align:center;text-shadow:0 0 9px #fff,0 0 25px rgba(255,219,151,.9),0 4px 18px #000;animation:anderson-welcome-title 4s ease forwards}
+/* FIVE-SECOND LUXURY CELEBRATION WELCOME INTRO */
+.anderson-welcome-flash{position:absolute;inset:0;z-index:8;display:grid;place-items:center;overflow:hidden;pointer-events:none;background:linear-gradient(135deg,rgba(34,20,13,.30),rgba(73,47,28,.12));animation:anderson-welcome-fade 5s ease forwards}
+.anderson-welcome-title{position:relative;z-index:3;margin:0;padding:clamp(17px,2.6vw,30px) clamp(28px,5.5vw,68px);border:1px solid rgba(239,211,155,.95);background:linear-gradient(135deg,rgba(37,22,15,.88),rgba(88,57,32,.76));box-shadow:0 14px 48px rgba(0,0,0,.28),inset 0 0 28px rgba(226,190,124,.16);color:#fff8e9;font:600 clamp(28px,5.8vw,72px)/1.12 "Playfair Display",Georgia,serif;letter-spacing:clamp(2px,.8vw,9px);text-align:center;text-shadow:0 3px 18px rgba(0,0,0,.45);animation:anderson-welcome-title 5s ease forwards}
 .anderson-welcome-title:before,.anderson-welcome-title:after{content:"✦";position:absolute;color:#f5dca8;font:18px Georgia;top:50%;transform:translateY(-50%);text-shadow:0 0 12px #fff,0 0 22px #f3c66f}
 .anderson-welcome-title:before{left:12px}.anderson-welcome-title:after{right:12px}
-.anderson-lightning{position:absolute;inset:0;width:100%;height:100%;z-index:1;overflow:visible;opacity:0;filter:drop-shadow(0 0 9px #fff) drop-shadow(0 0 20px #9edaff);animation:anderson-bolt-flash 4s steps(1,end) forwards}
-.anderson-lightning path{fill:none;stroke:#fff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
-.anderson-lightning path.glow{stroke:#a8dfff;stroke-width:10;opacity:.55}
-@keyframes anderson-sky-flash{0%,8%,18%,31%,44%,57%,70%,83%,100%{opacity:0}9%,10%,32%,33%,58%,59%,84%,85%{opacity:.23}19%,20%,45%,46%,71%,72%{opacity:.12}}
-@keyframes anderson-bolt-flash{0%,7%,17%,30%,43%,56%,69%,82%,100%{opacity:0}8%,9%,31%,32%,57%,58%,83%,84%{opacity:1}18%,19%,44%,45%,70%,71%{opacity:.72}}
-@keyframes anderson-welcome-title{0%{opacity:0;transform:scale(.82);filter:blur(7px)}10%{opacity:1;transform:scale(1.04);filter:blur(0)}17%{transform:scale(1)}88%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1.06)}}
-@keyframes anderson-welcome-fade{0%,88%{opacity:1}100%{opacity:0;visibility:hidden}}
-@media(max-width:600px){.anderson-welcome-title{letter-spacing:3px;padding:16px 24px}.anderson-welcome-title:before{left:7px}.anderson-welcome-title:after{right:7px}}
-@media(prefers-reduced-motion:reduce){.anderson-welcome-flash:before,.anderson-lightning,.anderson-welcome-title{animation:none!important}.anderson-welcome-flash{animation:none!important;opacity:1}.anderson-lightning{display:none}.anderson-welcome-title{opacity:1;transform:none;filter:none}}
+.anderson-confetti{position:absolute;z-index:2;top:-14%;width:8px;height:13px;border-radius:2px;background:var(--confetti-color,#d6b16d);opacity:0;box-shadow:0 0 8px rgba(255,231,184,.35);animation:anderson-confetti-fall var(--fall-duration,3.8s) var(--fall-delay,0s) ease-in forwards}
+.anderson-confetti:nth-child(3n){width:5px;height:5px;border-radius:50%}
+.anderson-confetti:nth-child(4n){width:4px;height:17px}
+@keyframes anderson-confetti-fall{0%{opacity:0;transform:translate3d(0,-8vh,0) rotate(0deg)}10%{opacity:.95}85%{opacity:.9}100%{opacity:0;transform:translate3d(var(--confetti-drift,35px),115vh,0) rotate(var(--confetti-spin,540deg))}}
+@keyframes anderson-welcome-title{0%{opacity:0;transform:translateY(12px) scale(.94);filter:blur(4px)}12%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}82%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-5px) scale(1.02)}}
+@keyframes anderson-welcome-fade{0%,84%{opacity:1}100%{opacity:0;visibility:hidden}}
+@media(max-width:600px){.anderson-welcome-title{letter-spacing:2px;padding:16px 25px}.anderson-welcome-title:before{left:7px}.anderson-welcome-title:after{right:7px}}
+@media(prefers-reduced-motion:reduce){.anderson-confetti,.anderson-welcome-title{animation:none!important}.anderson-confetti{display:none}.anderson-welcome-flash{animation:none!important;opacity:1}.anderson-welcome-title{opacity:1;transform:none;filter:none}}
 
 </style>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -705,7 +703,7 @@ document.documentElement.lang="en";document.querySelectorAll("[data-en][data-id]
 
 
 <script>
-/* ANDERSON FOUR-SECOND WELCOME LIGHTNING INTRO */
+/* ANDERSON FIVE-SECOND LUXURY CELEBRATION INTRO */
 (function(){
   const hero=document.querySelector('.mevy-hero');
   if(!hero||hero.querySelector('.anderson-welcome-flash'))return;
@@ -713,9 +711,21 @@ document.documentElement.lang="en";document.querySelectorAll("[data-en][data-id]
   overlay.className='anderson-welcome-flash';
   overlay.setAttribute('role','status');
   overlay.setAttribute('aria-label','WELCOME');
-  overlay.innerHTML='<h2 class="anderson-welcome-title">WELCOME</h2><svg class="anderson-lightning" viewBox="0 0 1200 650" preserveAspectRatio="none" aria-hidden="true"><path class="glow" d="M185 0 L245 115 L210 160 L295 255 L260 310 L340 410"/><path d="M185 0 L245 115 L210 160 L295 255 L260 310 L340 410"/><path class="glow" d="M970 0 L900 105 L940 155 L850 255 L890 310 L790 445"/><path d="M970 0 L900 105 L940 155 L850 255 L890 310 L790 445"/><path d="M560 0 L590 75 L570 110 L625 175"/></svg>';
+  overlay.innerHTML='<h2 class="anderson-welcome-title">WELCOME</h2>';
+  const colors=['#f4d99e','#c79a55','#fff0c9','#dfbd7d','#b88745','#fffaf0'];
+  for(let i=0;i<58;i++){
+    const piece=document.createElement('span');
+    piece.className='anderson-confetti';
+    piece.style.left=(Math.random()*100)+'%';
+    piece.style.setProperty('--confetti-color',colors[i%colors.length]);
+    piece.style.setProperty('--fall-delay',(Math.random()*1.35)+'s');
+    piece.style.setProperty('--fall-duration',(3.1+Math.random()*1.7)+'s');
+    piece.style.setProperty('--confetti-drift',((Math.random()-.5)*150)+'px');
+    piece.style.setProperty('--confetti-spin',((Math.random()>.5?1:-1)*(240+Math.random()*720))+'deg');
+    overlay.appendChild(piece);
+  }
   hero.appendChild(overlay);
-  window.setTimeout(()=>overlay.remove(),4000);
+  window.setTimeout(()=>overlay.remove(),5000);
 })();
 </script>
 
