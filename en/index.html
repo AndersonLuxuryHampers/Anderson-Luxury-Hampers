@@ -442,6 +442,14 @@ html,body{max-width:100%}body{overflow-x:clip}
 @media(max-width:600px){.anderson-welcome-title{letter-spacing:2px;padding:16px 25px}.anderson-welcome-title:before{left:7px}.anderson-welcome-title:after{right:7px}}
 @media(prefers-reduced-motion:reduce){.anderson-confetti,.anderson-welcome-title{animation:none!important}.anderson-confetti{display:none}.anderson-welcome-flash{animation:none!important;opacity:1}.anderson-welcome-title{opacity:1;transform:none;filter:none}}
 
+
+/* GOLDEN SPARKLE LAYER — runs together with the celebration confetti */
+.anderson-sparkle{position:absolute;z-index:2;display:block;pointer-events:none;color:#ffe8ad;font:clamp(10px,1.5vw,20px) Georgia,serif;line-height:1;text-shadow:0 0 5px #fff5d8,0 0 12px #f5ce79,0 0 24px rgba(255,210,120,.9);opacity:0;animation:anderson-sparkle-twinkle var(--sparkle-duration,1.8s) var(--sparkle-delay,0s) ease-in-out infinite}
+.anderson-sparkle:nth-of-type(3n){font-size:clamp(7px,1vw,13px)}
+.anderson-sparkle:nth-of-type(4n){color:#fffaf0}
+@keyframes anderson-sparkle-twinkle{0%,100%{opacity:0;transform:scale(.25) rotate(0deg)}35%{opacity:.95;transform:scale(1.15) rotate(35deg)}58%{opacity:.35;transform:scale(.7) rotate(70deg)}}
+@media(prefers-reduced-motion:reduce){.anderson-sparkle{animation:none!important;display:none}}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="id" href="https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/index.html">
@@ -723,6 +731,17 @@ document.documentElement.lang="en";document.querySelectorAll("[data-en][data-id]
     piece.style.setProperty('--confetti-drift',((Math.random()-.5)*150)+'px');
     piece.style.setProperty('--confetti-spin',((Math.random()>.5?1:-1)*(240+Math.random()*720))+'deg');
     overlay.appendChild(piece);
+  }
+  const sparkleSymbols=['✦','✧','✶','⋆','✧'];
+  for(let i=0;i<34;i++){
+    const sparkle=document.createElement('span');
+    sparkle.className='anderson-sparkle';
+    sparkle.textContent=sparkleSymbols[i%sparkleSymbols.length];
+    sparkle.style.left=(3+Math.random()*94)+'%';
+    sparkle.style.top=(5+Math.random()*88)+'%';
+    sparkle.style.setProperty('--sparkle-delay',(Math.random()*2.2)+'s');
+    sparkle.style.setProperty('--sparkle-duration',(1.25+Math.random()*1.45)+'s');
+    overlay.appendChild(sparkle);
   }
   hero.appendChild(overlay);
   window.setTimeout(()=>overlay.remove(),5000);
