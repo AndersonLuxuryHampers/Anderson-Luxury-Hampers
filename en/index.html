@@ -389,6 +389,44 @@ html,body{max-width:100%}body{overflow-x:clip}
   #collections .cards>.card img{height:250px}
 }
 
+
+/* ANDERSON HERO SHOWCASE SLIDESHOW — editorial, calm, premium motion */
+.mevy-hero{position:relative;isolation:isolate;overflow:hidden}
+.mevy-hero>.hero-carousel{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.hero-carousel .hero-slide{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center 48%;opacity:0;transform:scale(1.035);transition:opacity 1.35s ease,transform 7s ease;will-change:opacity,transform}
+.hero-carousel .hero-slide.is-active{opacity:1;transform:scale(1)}
+.hero-carousel:after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(255,246,234,.97) 0%,rgba(255,246,234,.91) 32%,rgba(255,246,234,.68) 53%,rgba(255,246,234,.12) 78%,rgba(255,246,234,.05) 100%),linear-gradient(0deg,rgba(45,28,21,.10),transparent 35%);pointer-events:none}
+.mevy-hero:before{z-index:1!important}
+.mevy-hero>.wrap{position:relative;z-index:2}
+.hero-slide-controls{position:absolute;z-index:3;right:clamp(18px,5vw,68px);bottom:22px;display:flex;align-items:center;gap:12px;padding:9px 13px;border:1px solid rgba(181,139,77,.48);border-radius:999px;background:rgba(255,253,248,.82);backdrop-filter:blur(12px);box-shadow:0 8px 24px rgba(45,28,21,.09)}
+.hero-slide-caption{min-width:118px;color:var(--brown);font-family:"DM Sans",sans-serif;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+.hero-slide-count{color:var(--gold);font-variant-numeric:tabular-nums;font-size:10px;letter-spacing:1px;white-space:nowrap}
+.hero-slide-controls button{display:grid;place-items:center;width:28px;height:28px;padding:0;border:1px solid rgba(181,139,77,.45);border-radius:50%;background:transparent;color:var(--brown);font-size:15px;cursor:pointer;transition:background .25s,color .25s,transform .25s}
+.hero-slide-controls button:hover,.hero-slide-controls button:focus-visible{background:var(--dark);color:#fff;transform:scale(1.06);outline:none}
+.hero-slide-dots{display:flex;align-items:center;gap:5px}
+.hero-slide-dots button{width:6px;height:6px;min-width:6px;height:6px;border:0;background:rgba(73,49,38,.32);transition:width .3s,background .3s}
+.hero-slide-dots button[aria-current="true"]{width:19px;border-radius:6px;background:var(--gold)}
+.hero-slide-controls button:focus-visible,.hero-slide-dots button:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.card,.home-sample-card{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+.card:hover{transform:translateY(-7px);box-shadow:0 18px 38px rgba(45,28,21,.12)}
+.card img,.home-sample-card img{transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .6s}
+.card:hover img,.home-sample-card:hover img{transform:scale(1.045);filter:saturate(1.08)}
+.home-sample-card{overflow:hidden}
+.home-sample-card figcaption{transition:color .3s,letter-spacing .3s}
+.home-sample-card:hover figcaption{color:var(--gold);letter-spacing:.7px}
+.proof-item{transition:transform .35s,color .35s}
+.proof-item:hover{transform:translateY(-4px)}
+@media(max-width:760px){
+ .hero-slide-controls{right:15px;bottom:13px;gap:8px;padding:7px 9px}
+ .hero-slide-caption{min-width:92px;font-size:8px;letter-spacing:1px}
+ .hero-carousel .hero-slide{object-position:60% center}
+ .hero-carousel:after{background:linear-gradient(90deg,rgba(255,246,234,.97) 0%,rgba(255,246,234,.90) 43%,rgba(255,246,234,.62) 72%,rgba(255,246,234,.20) 100%),linear-gradient(0deg,rgba(255,253,248,.12),transparent 40%)}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-carousel .hero-slide,.card,.card img,.home-sample-card,.home-sample-card img,.proof-item{transition:none!important;transform:none!important}
+ .hero-carousel .hero-slide:not(.is-active){display:none}
+}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="alternate" hreflang="id" href="https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/index.html">
@@ -606,4 +644,46 @@ document.documentElement.lang="en";document.querySelectorAll("[data-en][data-id]
   window.addEventListener("popstate",function(){visit(new URL(window.location.href),{push:false,scroll:true})});
 })();
 </script>
+
+<script>
+/* ANDERSON HERO SHOWCASE SLIDESHOW */
+(function(){
+ const hero=document.querySelector('.mevy-hero');
+ if(!hero||hero.querySelector('.hero-carousel'))return;
+ if(typeof window.__andersonHeroCleanup==='function')window.__andersonHeroCleanup();
+ const base='../images/';
+ const slides=[
+  {src:base+'Corporate10.jpg',en:'Corporate gifting',id:'Hadiah korporat',alt:'Anderson luxury corporate hamper'},
+  {src:base+'Beauty22.jpg',en:'Beauty & self-care',id:'Beauty & perawatan diri',alt:'Anderson beauty and self-care hamper'},
+  {src:base+'Chocolate13.jpg',en:'Chocolate & gourmet',id:'Cokelat & gourmet',alt:'Anderson chocolate gift hamper'},
+  {src:base+'Tumbler8.jpg',en:'Personal tumblers',id:'Tumbler personal',alt:'Anderson personalised tumbler gifts'}
+ ];
+ const stage=document.createElement('div');stage.className='hero-carousel';stage.setAttribute('aria-hidden','true');
+ slides.forEach((item,index)=>{
+  const img=document.createElement('img');img.className='hero-slide'+(index===0?' is-active':'');img.src=item.src;img.alt='';img.decoding='async';img.loading=index===0?'eager':'lazy';if(index===0)img.fetchPriority='high';stage.appendChild(img);
+ });
+ hero.insertBefore(stage,hero.firstChild);
+ const controls=document.createElement('div');controls.className='hero-slide-controls';controls.setAttribute('aria-label','Featured collection photographs');
+ const caption=document.createElement('span');caption.className='hero-slide-caption';caption.dataset.en=slides[0].en;caption.dataset.id=slides[0].id;caption.textContent=slides[0].id;
+ const count=document.createElement('span');count.className='hero-slide-count';count.textContent='01 / 04';
+ const prev=document.createElement('button');prev.type='button';prev.textContent='‹';prev.setAttribute('aria-label','Previous featured photograph');
+ const dots=document.createElement('div');dots.className='hero-slide-dots';
+ const next=document.createElement('button');next.type='button';next.textContent='›';next.setAttribute('aria-label','Next featured photograph');
+ slides.forEach((item,index)=>{const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label','Show '+item.en);dot.setAttribute('aria-current',index===0?'true':'false');dot.addEventListener('click',()=>show(index));dots.appendChild(dot)});
+ controls.append(caption,count,prev,dots,next);hero.appendChild(controls);
+ const images=[...stage.querySelectorAll('.hero-slide')],dotButtons=[...dots.querySelectorAll('button')];
+ let active=0,timer=null;
+ function show(index){active=(index+slides.length)%slides.length;images.forEach((img,i)=>img.classList.toggle('is-active',i===active));dotButtons.forEach((dot,i)=>dot.setAttribute('aria-current',i===active?'true':'false'));caption.dataset.en=slides[active].en;caption.dataset.id=slides[active].id;caption.textContent=document.documentElement.lang==='en'?slides[active].en:slides[active].id;count.textContent=String(active+1).padStart(2,'0')+' / 04'}
+ function stop(){if(timer){clearInterval(timer);timer=null}}
+ function start(){stop();if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&!document.hidden)timer=setInterval(()=>show(active+1),6200)}
+ prev.addEventListener('click',()=>{show(active-1);start()});next.addEventListener('click',()=>{show(active+1);start()});
+ const onVisibility=()=>document.hidden?stop():start();
+ const onLanguage=()=>show(active);
+ document.addEventListener('visibilitychange',onVisibility);document.addEventListener('anderson:languagechange',onLanguage);
+ controls.addEventListener('mouseenter',stop);controls.addEventListener('mouseleave',start);
+ window.__andersonHeroCleanup=()=>{stop();document.removeEventListener('visibilitychange',onVisibility);document.removeEventListener('anderson:languagechange',onLanguage)};
+ start();
+})();
+</script>
+
 </body></html>
