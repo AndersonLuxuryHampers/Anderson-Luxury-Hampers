@@ -350,6 +350,41 @@ main>.section:nth-of-type(8),main>section:nth-of-type(8){animation-delay:2.85s}
 @media(max-width:900px){.home-sample-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}}
 @media(max-width:680px){.home-samples{margin-top:38px;padding-top:28px}.home-sample-group+.home-sample-group{margin-top:27px}.home-sample-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.home-sample-card{padding:6px}.home-sample-heading h3{font-size:22px}.home-sample-heading span{font-size:8px;letter-spacing:1.2px}}
 
+
+/* FIX: homepage collection cards must be a complete grid, not a clipped carousel */
+#collections .cards{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+  gap:22px !important;
+  overflow:visible !important;
+  overflow-x:visible !important;
+  padding:4px 0 20px !important;
+  scroll-snap-type:none !important;
+}
+#collections .cards>.card{
+  min-width:0 !important;
+  width:auto !important;
+  max-width:none !important;
+  flex:none !important;
+  scroll-snap-align:none !important;
+}
+#collections .cards>.card:last-child:nth-child(4n+1){
+  grid-column:2 / span 2;
+  width:calc(50% - 11px) !important;
+  justify-self:center;
+}
+#collections .cards>.card img{width:100%;height:clamp(190px,22vw,280px);object-fit:cover}
+#collections .home-samples{display:block;width:100%;clear:both}
+@media(max-width:900px){
+  #collections .cards{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:16px !important}
+  #collections .cards>.card:last-child:nth-child(4n+1){grid-column:auto;width:auto !important}
+  #collections .cards>.card img{height:230px}
+}
+@media(max-width:560px){
+  #collections .cards{grid-template-columns:1fr !important;gap:16px !important}
+  #collections .cards>.card img{height:250px}
+}
+
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="alternate" hreflang="id" href="https://andersonluxuryhampers.github.io/Anderson-Luxury-Hampers/index.html">
@@ -371,6 +406,7 @@ main>.section:nth-of-type(8),main>section:nth-of-type(8){animation-delay:2.85s}
 <article class="card"><a href="tumblers.html"><img src="images/Tumbler8.jpg" alt="Personal tumbler collection" loading="lazy"><div class="card-body"><small>04 · Personal</small><h3 data-en="Personal Tumblers" data-id="Tumbler Personal">Tumbler Personal</h3><p data-en="Personalised tumbler gifts for everyday moments and thoughtful appreciation." data-id="Hadiah tumbler personal untuk keseharian dan bentuk apresiasi.">Hadiah tumbler personal untuk keseharian dan bentuk apresiasi.</p><span class="collection-link" data-en="Explore collection →" data-id="Jelajahi koleksi →">Jelajahi koleksi →</span></div></a></article>
 <article class="card"><a href="gourmet.html"><img src="images/Wine7.jpg" alt="Gourmet and celebration collection" loading="lazy"><div class="card-body"><small>05 · Celebrations</small><h3 data-en="Gourmet & Celebrations" data-id="Gourmet & Perayaan">Gourmet & Perayaan</h3><p data-en="Thoughtful selections to make celebrations feel even more memorable." data-id="Pilihan hadiah untuk menjadikan perayaan semakin berkesan.">Pilihan hadiah untuk menjadikan perayaan semakin berkesan.</p><span class="collection-link" data-en="Explore collection →" data-id="Jelajahi koleksi →">Jelajahi koleksi →</span></div></a></article>
 
+</div>
 <div class="home-samples" id="home-samples">
  <div class="section-head" style="margin-bottom:30px">
   <div class="eyebrow" data-en="A closer look at our collections" data-id="Lihat lebih dekat koleksi kami">Lihat lebih dekat koleksi kami</div>
@@ -430,7 +466,7 @@ main>.section:nth-of-type(8),main>section:nth-of-type(8){animation-delay:2.85s}
   </div>
  </div>
 </div>
-</div></div></section>
+</div></section>
 <section class="section" id="story"><div class="wrap story"><img src="images/Chocolate14.jpg" alt="Carefully curated Anderson gift" loading="lazy"><div><div class="eyebrow" data-en="The Anderson touch" data-id="Sentuhan Anderson">Sentuhan Anderson</div><h2 data-en="Gifting is an expression of how much we care." data-id="Hadiah adalah ungkapan betapa berartinya seseorang.">Hadiah adalah ungkapan betapa berartinya seseorang.</h2><p data-en="At Anderson Luxury Hampers, we believe a gift is more than what is inside the box. It is a thoughtful expression, a lasting memory and a beautiful way to celebrate the people who matter. Every detail is considered, from the selection to the final presentation." data-id="Di Anderson Luxury Hampers, kami percaya bahwa hadiah lebih dari sekadar isi sebuah kotak. Hadiah adalah ungkapan perhatian, kenangan yang bertahan, dan cara indah untuk merayakan orang-orang yang berarti. Setiap detail diperhatikan, mulai dari pemilihan hingga presentasi akhir.">Di Anderson Luxury Hampers, kami percaya bahwa hadiah lebih dari sekadar isi sebuah kotak. Hadiah adalah ungkapan perhatian, kenangan yang bertahan, dan cara indah untuk merayakan orang-orang yang berarti. Setiap detail diperhatikan, mulai dari pemilihan hingga presentasi akhir.</p><div class="values"><div class="value"><b>Thoughtfully curated</b><small data-en="Selected with intention" data-id="Dipilih dengan penuh perhatian">Dipilih dengan penuh perhatian</small></div><div class="value"><b>Elegant presentation</b><small data-en="Beautiful in every detail" data-id="Indah dalam setiap detail">Indah dalam setiap detail</small></div><div class="value"><b>Personal touch</b><small data-en="Made meaningful for you" data-id="Dibuat bermakna untuk Anda">Dibuat bermakna untuk Anda</small></div><div class="value"><b>Made to celebrate</b><small data-en="For moments worth remembering" data-id="Untuk momen yang layak dikenang">Untuk momen yang layak dikenang</small></div></div></div></div></section>
 <section class="collection section" id="beauty"><div class="section-head"><span class="eyebrow" data-en="Beauty & Self-Care" data-id="Keindahan & Perawatan Diri">Keindahan & Perawatan Diri</span><h2 data-en="Beauty & Self-Care" data-id="Keindahan & Perawatan Diri">Keindahan & Perawatan Diri</h2><p data-en="Thoughtfully selected pieces, beautifully presented for meaningful moments." data-id="Pilihan istimewa yang ditata dengan indah untuk setiap momen bermakna.">Pilihan istimewa yang ditata dengan indah untuk setiap momen bermakna.</p></div><div class="gallery"><figure><img src="images/Beauty19.jpg" alt="Beauty & Self-Care 1" loading="lazy"><figcaption>Beauty & Self-Care <span>01</span></figcaption></figure><figure><img src="images/Beauty20.jpg" alt="Beauty & Self-Care 2" loading="lazy"><figcaption>Beauty & Self-Care <span>02</span></figcaption></figure><figure><img src="images/Beauty21.jpg" alt="Beauty & Self-Care 3" loading="lazy"><figcaption>Beauty & Self-Care <span>03</span></figcaption></figure><figure><img src="images/Beauty22.jpg" alt="Beauty & Self-Care 4" loading="lazy"><figcaption>Beauty & Self-Care <span>04</span></figcaption></figure><figure><img src="images/Beauty23.jpg" alt="Beauty & Self-Care 5" loading="lazy"><figcaption>Beauty & Self-Care <span>05</span></figcaption></figure><figure><img src="images/Beauty24.jpg" alt="Beauty & Self-Care 6" loading="lazy"><figcaption>Beauty & Self-Care <span>06</span></figcaption></figure><figure><img src="images/Beauty25.jpg" alt="Beauty & Self-Care 7" loading="lazy"><figcaption>Beauty & Self-Care <span>07</span></figcaption></figure><figure><img src="images/Beauty26.jpg" alt="Beauty & Self-Care 8" loading="lazy"><figcaption>Beauty & Self-Care <span>08</span></figcaption></figure><figure><img src="images/Beauty27.jpg" alt="Beauty & Self-Care 9" loading="lazy"><figcaption>Beauty & Self-Care <span>09</span></figcaption></figure><figure><img src="images/Beauty28.jpg" alt="Beauty & Self-Care 10" loading="lazy"><figcaption>Beauty & Self-Care <span>10</span></figcaption></figure><figure><img src="images/Beauty29.jpg" alt="Beauty & Self-Care 11" loading="lazy"><figcaption>Beauty & Self-Care <span>11</span></figcaption></figure><figure><img src="images/Beauty30.jpg" alt="Beauty & Self-Care 12" loading="lazy"><figcaption>Beauty & Self-Care <span>12</span></figcaption></figure><figure><img src="images/Beauty31.jpg" alt="Beauty & Self-Care 13" loading="lazy"><figcaption>Beauty & Self-Care <span>13</span></figcaption></figure><figure><img src="images/Beauty32.jpg" alt="Beauty & Self-Care 14" loading="lazy"><figcaption>Beauty & Self-Care <span>14</span></figcaption></figure><figure><img src="images/Beauty33.jpg" alt="Beauty & Self-Care 15" loading="lazy"><figcaption>Beauty & Self-Care <span>15</span></figcaption></figure><figure><img src="images/Beauty34.jpg" alt="Beauty & Self-Care 16" loading="lazy"><figcaption>Beauty & Self-Care <span>16</span></figcaption></figure></div></section>
 <section class="collection section" id="chocolate"><div class="section-head"><span class="eyebrow" data-en="Chocolate Collection" data-id="Koleksi Cokelat">Koleksi Cokelat</span><h2 data-en="Chocolate Collection" data-id="Koleksi Cokelat">Koleksi Cokelat</h2><p data-en="Thoughtfully selected pieces, beautifully presented for meaningful moments." data-id="Pilihan istimewa yang ditata dengan indah untuk setiap momen bermakna.">Pilihan istimewa yang ditata dengan indah untuk setiap momen bermakna.</p></div><div class="gallery"><figure><img src="images/Chocolate13.jpg" alt="Chocolate Collection 1" loading="lazy"><figcaption>Chocolate Collection <span>01</span></figcaption></figure><figure><img src="images/Chocolate14.jpg" alt="Chocolate Collection 2" loading="lazy"><figcaption>Chocolate Collection <span>02</span></figcaption></figure><figure><img src="images/Chocolate15.jpg" alt="Chocolate Collection 3" loading="lazy"><figcaption>Chocolate Collection <span>03</span></figcaption></figure><figure><img src="images/Chocolate16.jpg" alt="Chocolate Collection 4" loading="lazy"><figcaption>Chocolate Collection <span>04</span></figcaption></figure><figure><img src="images/Chocolate17.jpg" alt="Chocolate Collection 5" loading="lazy"><figcaption>Chocolate Collection <span>05</span></figcaption></figure><figure><img src="images/Chocolate18.jpg" alt="Chocolate Collection 6" loading="lazy"><figcaption>Chocolate Collection <span>06</span></figcaption></figure><figure><img src="images/Chocolate19.jpg" alt="Chocolate Collection 7" loading="lazy"><figcaption>Chocolate Collection <span>07</span></figcaption></figure><figure><img src="images/Chocolate20.jpg" alt="Chocolate Collection 8" loading="lazy"><figcaption>Chocolate Collection <span>08</span></figcaption></figure><figure><img src="images/Chocolate21.jpg" alt="Chocolate Collection 9" loading="lazy"><figcaption>Chocolate Collection <span>09</span></figcaption></figure><figure><img src="images/Chocolate22.jpg" alt="Chocolate Collection 10" loading="lazy"><figcaption>Chocolate Collection <span>10</span></figcaption></figure><figure><img src="images/Chocolate23.jpg" alt="Chocolate Collection 11" loading="lazy"><figcaption>Chocolate Collection <span>11</span></figcaption></figure><figure><img src="images/Chocolate24.jpg" alt="Chocolate Collection 12" loading="lazy"><figcaption>Chocolate Collection <span>12</span></figcaption></figure></div></section>
