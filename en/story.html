@@ -217,4 +217,6 @@ document.documentElement.lang="en";document.querySelectorAll("[data-en][data-id]
   window.addEventListener("popstate",function(){visit(new URL(window.location.href),{push:false,scroll:true})});
 })();
 </script>
+
+<script id="anderson-language-startup">(function(){var lang=(document.documentElement.lang||"id").toLowerCase().startsWith("en")?"en":"id";document.documentElement.lang=lang;document.querySelectorAll("[data-en][data-id]").forEach(function(el){var value=el.dataset[lang];if(value!==undefined)el.innerHTML=value;});})();</script>
 </body></html>
