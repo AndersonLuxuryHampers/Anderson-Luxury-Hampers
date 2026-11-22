@@ -761,6 +761,68 @@ body{letter-spacing:.005em;-webkit-font-smoothing:antialiased}
 :focus-visible{outline:3px solid #8a642f;outline-offset:3px;}
 </style>
 
+
+<style id="anderson-left-text-feather">
+/* Keep the factory video full-bleed and full-size. Add only a soft left-side
+   champagne feather behind the copy; the right side remains unobstructed. */
+.mevy-hero{
+  background:none!important;
+  overflow:hidden;
+}
+.mevy-hero-video{
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  z-index:0!important;
+  opacity:1!important;
+  filter:none!important;
+}
+.mevy-hero::before{
+  display:block!important;
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  background:linear-gradient(90deg,
+    rgba(255,246,234,.58) 0%,
+    rgba(255,246,234,.44) 35%,
+    rgba(255,246,234,.24) 57%,
+    rgba(255,246,234,.08) 73%,
+    rgba(255,246,234,0) 86%)!important;
+  filter:none!important;
+  pointer-events:none!important;
+}
+.mevy-hero .wrap,
+.mevy-hero .hero-grid,
+.mevy-hero .hero-copy{
+  position:relative;
+  z-index:2!important;
+}
+@media(max-width:760px){
+ .mevy-hero::before{
+  background:linear-gradient(90deg,
+   rgba(255,246,234,.62) 0%,
+   rgba(255,246,234,.48) 39%,
+   rgba(255,246,234,.27) 62%,
+   rgba(255,246,234,.09) 82%,
+   rgba(255,246,234,0) 96%)!important;
+ }
+}
+@media(max-width:430px){
+ .mevy-hero::before{
+  background:linear-gradient(90deg,
+   rgba(255,246,234,.64) 0%,
+   rgba(255,246,234,.50) 42%,
+   rgba(255,246,234,.28) 66%,
+   rgba(255,246,234,.08) 86%,
+   rgba(255,246,234,0) 100%)!important;
+ }
+}
+:focus-visible{outline:3px solid #8a642f;outline-offset:3px;}
+</style>
+
 </head>
 <body>
 <div class="announcement" data-en="Considered gifts for the moments that matter" data-id="Hadiah istimewa untuk setiap momen yang berarti">Hadiah istimewa untuk setiap momen yang berarti</div>
