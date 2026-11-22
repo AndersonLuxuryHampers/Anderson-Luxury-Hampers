@@ -853,6 +853,74 @@ body{letter-spacing:.005em;-webkit-font-smoothing:antialiased}
 :focus-visible{outline:3px solid #8a642f;outline-offset:3px;}
 </style>
 
+
+<style id="anderson-hero-final-contrast">
+/* Final correction: remove every hero coating layer; preserve full-bleed video. */
+.mevy-hero::before,
+.mevy-hero:before,
+.mevy-hero::after,
+.mevy-hero:after{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  background-image:none!important;
+  filter:none!important;
+  opacity:0!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.mevy-hero{
+  background:none!important;
+  background-image:none!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+}
+.mevy-hero-video{
+  display:block!important;
+  position:absolute!important;
+  inset:0!important;
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  z-index:0!important;
+  opacity:1!important;
+  filter:none!important;
+}
+.mevy-hero>.wrap,
+.mevy-hero .wrap,
+.mevy-hero .hero-grid,
+.mevy-hero .hero-copy{
+  position:relative!important;
+  z-index:2!important;
+}
+.mevy-hero .hero-kicker,
+.mevy-hero .hero-kicker span{
+  color:#fffaf0!important;
+  font-weight:800!important;
+  text-shadow:0 2px 4px #24150f,0 0 10px #24150f,0 1px 16px rgba(0,0,0,.95)!important;
+}
+.mevy-hero h1,
+.mevy-hero h1 span{
+  color:#fffdf7!important;
+  -webkit-text-stroke:.65px #352014;
+  paint-order:stroke fill;
+  text-shadow:0 3px 5px #24150f,0 0 12px rgba(0,0,0,.98),0 1px 22px rgba(0,0,0,.85)!important;
+}
+.mevy-hero h1 em{
+  color:#ffd36f!important;
+  -webkit-text-stroke:.7px #39200d;
+  text-shadow:0 3px 5px #24150f,0 0 13px rgba(0,0,0,.98),0 1px 24px rgba(0,0,0,.9)!important;
+}
+.mevy-hero p,
+.mevy-hero .hero-copy>p{
+  color:#fffdf7!important;
+  font-weight:650!important;
+  text-shadow:0 2px 4px #24150f,0 0 9px #24150f,0 1px 18px rgba(0,0,0,.98)!important;
+}
+:focus-visible{outline:3px solid #8a642f;outline-offset:3px;}
+</style>
+
 </head>
 <body>
 <div class="announcement" data-en="Considered gifts for the moments that matter" data-id="Hadiah istimewa untuk setiap momen yang berarti">Hadiah istimewa untuk setiap momen yang berarti</div>
