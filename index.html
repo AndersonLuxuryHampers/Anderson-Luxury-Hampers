@@ -520,6 +520,65 @@ main>.section:nth-of-type(8),main>section:nth-of-type(8){animation-delay:2.85s}
 @media(prefers-reduced-motion:reduce){.mevy-hero-video{display:none}}
 .mevy-hero a:focus-visible{outline:3px solid #6b3f16;outline-offset:4px;box-shadow:0 0 0 2px #fff}
 </style>
+<style id="anderson-luxury-refinement">
+/* Editorial luxury refinement — preserves existing content and navigation */
+:root{--gold:#a98249;--champ:#e4d2ad;--line:#e9dfd1;--ivory:#fffdf9}
+body{letter-spacing:.005em;-webkit-font-smoothing:antialiased}
+.announcement{font-size:9px;letter-spacing:2.8px;padding:11px 15px}
+.header{box-shadow:0 5px 24px rgba(45,28,21,.035)}
+.brand{letter-spacing:1.8px}
+.header .links a{position:relative;padding:8px 0;transition:color .25s ease}
+.header .links a:after{content:"";position:absolute;left:0;right:100%;bottom:1px;height:1px;background:var(--gold);transition:right .25s ease}
+.header .links a:hover:after,.header .links a:focus-visible:after{right:0}
+.mevy-hero{min-height:clamp(520px,55vw,690px);padding:clamp(82px,10vw,132px) 0; background-position:center 48%}
+.mevy-hero .hero-copy{max-width:650px}
+.mevy-hero .hero-kicker{letter-spacing:3.4px}
+.mevy-hero h1{letter-spacing:-1.9px;text-wrap:balance;text-shadow:0 1px 16px rgba(255,253,249,.15)}
+.mevy-hero p{max-width:555px}
+.mevy-hero .button.gold,.nav-cta,.button{transition:transform .3s ease,box-shadow .3s ease,background-color .3s ease}
+.mevy-hero .button.gold:hover,.nav-cta:hover,.button:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(67,45,27,.16)}
+.section{padding:clamp(72px,8vw,108px) 0}
+.section-head{margin-bottom:clamp(34px,4vw,54px)}
+.section-head .eyebrow{letter-spacing:3px}
+.section-head h2,.story h2,.corporate h2{letter-spacing:-.6px;line-height:1.12;text-wrap:balance}
+.section-head p{max-width:590px;margin-left:auto;margin-right:auto}
+.cards{gap:24px;padding:8px 3px 24px}
+.card{border:1px solid rgba(181,139,77,.22);box-shadow:0 8px 28px rgba(45,28,21,.045);overflow:hidden;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+.card:hover{transform:translateY(-7px);box-shadow:0 20px 42px rgba(45,28,21,.12);border-color:rgba(181,139,77,.55)}
+.card img{transition:transform .7s cubic-bezier(.2,.7,.2,1);object-position:center}
+.card:hover img{transform:scale(1.035)}
+.card-body{padding:24px 23px 26px}
+.card-body h3{line-height:1.2}
+.collection-link{transition:color .2s ease,border-color .2s ease}
+.collection-link:hover{color:var(--gold);border-color:var(--brown)}
+.story img,.corporate img,.bespoke-image{box-shadow:0 22px 55px rgba(45,28,21,.11)}
+.gallery{gap:18px}
+.gallery figure{overflow:hidden;box-shadow:0 5px 20px rgba(45,28,21,.035);transition:transform .35s ease,box-shadow .35s ease}
+.gallery figure:hover{transform:translateY(-6px);box-shadow:0 18px 34px rgba(45,28,21,.12)}
+.gallery img{transition:transform .65s ease}
+.gallery figure:hover img{transform:scale(1.04)}
+.testimonial-card,.standard-card,.solution-card{border-color:rgba(181,139,77,.25);transition:transform .3s ease,box-shadow .3s ease}
+.testimonial-card:hover,.standard-card:hover,.solution-card:hover{transform:translateY(-4px);box-shadow:0 15px 32px rgba(45,28,21,.08)}
+.contact-panel{position:relative;overflow:hidden;box-shadow:0 14px 38px rgba(45,28,21,.045)}
+.contact-panel:before{content:"";position:absolute;inset:12px;border:1px solid rgba(181,139,77,.2);pointer-events:none}
+.contact-panel>*{position:relative}
+.footer{border-top:1px solid rgba(223,201,159,.18)}
+.floating{transition:transform .25s ease,box-shadow .25s ease}
+.floating:hover{transform:translateY(-4px);box-shadow:0 13px 30px rgba(0,0,0,.2)}
+:focus-visible{outline:2px solid #9a713b;outline-offset:4px}
+@media(max-width:760px){
+ .mevy-hero{min-height:510px;padding:70px 0 78px;background-position:60% center}
+ .mevy-hero .hero-copy{max-width:560px}
+ .section{padding:66px 0}
+ .cards{gap:16px}
+ .card-body{padding:19px}
+ .gallery{gap:12px}
+}
+@media(prefers-reduced-motion:reduce){
+ .card,.card img,.gallery figure,.gallery img,.button,.nav-cta,.floating{transition:none!important}
+ .card:hover,.gallery figure:hover,.testimonial-card:hover,.standard-card:hover,.solution-card:hover{transform:none}
+}
+</style>
 </head>
 <body>
 <div class="announcement" data-en="Considered gifts for the moments that matter" data-id="Hadiah istimewa untuk setiap momen yang berarti">Hadiah istimewa untuk setiap momen yang berarti</div>
