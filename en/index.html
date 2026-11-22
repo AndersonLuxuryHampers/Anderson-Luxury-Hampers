@@ -738,6 +738,27 @@ body{letter-spacing:.005em;-webkit-font-smoothing:antialiased}
 }
 </style>
 
+
+<style id="anderson-clean-video-hero">
+/* Remove the duplicate photo/ivory overlay above the live factory video.
+   Keep the actual video unobstructed; retain contrast through restrained type shadows. */
+.mevy-hero::before,
+.mevy-hero:before{
+  content:none!important;
+  display:none!important;
+  background:none!important;
+  filter:none!important;
+}
+.mevy-hero{background:none!important;isolation:isolate;overflow:hidden}
+.mevy-hero-video{z-index:0!important;opacity:1!important;filter:none!important}
+.mevy-hero .hero-grid,
+.mevy-hero .hero-copy{position:relative;z-index:2}
+.mevy-hero .hero-kicker{color:#60472f!important;text-shadow:0 1px 5px rgba(255,250,241,.8)!important}
+.mevy-hero h1{color:#35251d!important;text-shadow:0 2px 9px rgba(255,250,241,.72)!important}
+.mevy-hero h1 em{color:#93682f!important;text-shadow:0 2px 8px rgba(255,250,241,.68)!important}
+.mevy-hero p{color:#49372c!important;text-shadow:0 1px 7px rgba(255,250,241,.72)!important}
+</style>
+
 </head>
 <body>
 <div class="announcement" data-en="Considered gifts for the moments that matter" data-id="Hadiah istimewa untuk setiap momen yang berarti">Hadiah istimewa untuk setiap momen yang berarti</div>
