@@ -677,6 +677,61 @@ body{letter-spacing:.005em;-webkit-font-smoothing:antialiased}
 }
 </style>
 
+
+<style id="anderson-hero-contrast-footer-finish">
+/* Final legibility and footer refinement for both language homepages. */
+.mevy-hero:before{
+ background:linear-gradient(90deg,rgba(255,249,240,.93) 0%,rgba(255,249,240,.82) 43%,rgba(255,249,240,.35) 76%,rgba(255,249,240,.14) 100%)!important;
+}
+.mevy-hero .hero-copy{max-width:660px}
+.mevy-hero .hero-kicker{color:#805c32!important;text-shadow:0 1px 8px rgba(255,255,255,.75)}
+.mevy-hero h1,.mevy-hero .hero h1{
+ color:#35251d!important;
+ text-shadow:0 2px 16px rgba(255,252,246,.8);
+}
+.mevy-hero h1 em,.mevy-hero .hero h1 em{
+ color:#93682f!important;
+ text-shadow:0 2px 12px rgba(255,252,246,.8);
+}
+.mevy-hero p{
+ color:#49372c!important;
+ text-shadow:0 1px 10px rgba(255,252,246,.85);
+}
+.mevy-hero .button.gold{box-shadow:0 7px 20px rgba(76,48,24,.18)}
+.footer{padding:48px 0 24px}
+.footer-row{align-items:flex-start}
+.footer-brand{letter-spacing:1.4px}
+.footer-legal{border-top:1px solid rgba(228,210,173,.18);margin-top:18px}
+.footer-legal a{display:inline-block;color:#e4d2ad;text-decoration:none}
+.footer-legal a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.floating{right:16px;bottom:max(18px,env(safe-area-inset-bottom));padding:13px 19px;font-weight:600;letter-spacing:.35px}
+.floating:focus-visible{outline:3px solid #e4d2ad;outline-offset:4px}
+@media(max-width:760px){
+ .mevy-hero:before{
+  background:linear-gradient(90deg,rgba(255,249,240,.95) 0%,rgba(255,249,240,.86) 54%,rgba(255,249,240,.55) 100%)!important;
+ }
+ .mevy-hero .hero-copy{max-width:560px}
+ .mevy-hero h1,.mevy-hero .hero h1{max-width:540px;line-height:1.08}
+ .mevy-hero p{max-width:500px;line-height:1.85}
+ .footer-row{flex-direction:column;gap:12px;align-items:flex-start}
+ .footer-row>p{margin-top:0}
+}
+@media(max-width:430px){
+ .mevy-hero:before{
+  background:linear-gradient(90deg,rgba(255,249,240,.96) 0%,rgba(255,249,240,.90) 63%,rgba(255,249,240,.68) 100%)!important;
+ }
+ .mevy-hero .hero-kicker{letter-spacing:2px}
+ .mevy-hero h1,.mevy-hero .hero h1{font-size:clamp(36px,9vw,43px)}
+ .mevy-hero p{font-size:13px}
+ .footer{padding:38px 0 20px}
+ .footer-brand{font-size:22px}
+ .floating{right:12px;padding:12px 16px}
+}
+@media(prefers-reduced-motion:reduce){
+ .mevy-hero-video{display:none}
+}
+</style>
+
 </head>
 <body>
 <div class="announcement" data-en="Considered gifts for the moments that matter" data-id="Hadiah istimewa untuk setiap momen yang berarti">Hadiah istimewa untuk setiap momen yang berarti</div>
