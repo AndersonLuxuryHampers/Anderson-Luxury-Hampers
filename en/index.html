@@ -583,6 +583,58 @@ body{letter-spacing:.005em;-webkit-font-smoothing:antialiased}
  .card:hover,.gallery figure:hover,.testimonial-card:hover,.standard-card:hover,.solution-card:hover{transform:none}
 }
 </style>
+
+<style id="anderson-signature-showcase">
+/* Signature collection showcase: editorial photography, quiet luxury, clear browsing */
+#collections .section-head{max-width:760px;margin-bottom:36px}
+#collections .section-head h2{letter-spacing:-.6px}
+#collections .cards>.card{position:relative;overflow:hidden;background:#fffdf8;border:1px solid #e5d8c5;box-shadow:0 8px 24px rgba(45,28,21,.055);transition:transform .45s cubic-bezier(.22,.61,.36,1),box-shadow .45s,border-color .35s}
+#collections .cards>.card>a{display:flex;height:100%;flex-direction:column}
+#collections .cards>.card img{height:clamp(250px,27vw,340px);object-fit:cover;transition:transform .8s cubic-bezier(.22,.61,.36,1),filter .5s}
+#collections .cards>.card:hover{transform:translateY(-7px);border-color:#c8a875;box-shadow:0 22px 48px rgba(45,28,21,.13)}
+#collections .cards>.card:hover img{transform:scale(1.045)}
+#collections .cards>.card .card-body{padding:23px 22px 25px;display:flex;flex:1;flex-direction:column;align-items:flex-start}
+#collections .cards>.card .card-body small{display:inline-flex;align-items:center;gap:8px;letter-spacing:2.2px}
+#collections .cards>.card .card-body small:before{content:"";width:17px;height:1px;background:#b58b4d}
+#collections .cards>.card .card-body h3{font-size:clamp(21px,2vw,27px);line-height:1.2;margin:12px 0 8px}
+#collections .cards>.card .card-body p{font-size:12px;line-height:1.85;margin:0 0 15px}
+#collections .cards>.card .collection-link{margin-top:auto;padding-top:8px;letter-spacing:1.25px}
+#collections .pricing-note{max-width:850px;margin:0 auto 30px}
+#collections .home-samples{margin-top:64px;padding-top:48px;border-top:1px solid #dfd0ba}
+#collections .home-samples>.section-head{margin-bottom:38px}
+#collections .home-sample-group+.home-sample-group{margin-top:48px}
+#collections .home-sample-heading{padding-bottom:13px;border-bottom:1px solid #e5d8c5;margin-bottom:18px}
+#collections .home-sample-heading h3{font-size:clamp(24px,2.6vw,32px)}
+#collections .home-sample-card{padding:8px;background:#fffdf8;border:1px solid #e5d8c5;box-shadow:0 6px 20px rgba(45,28,21,.045);transition:transform .4s,box-shadow .4s,border-color .4s}
+#collections .home-sample-card:hover{transform:translateY(-5px);border-color:#c8a875;box-shadow:0 16px 34px rgba(45,28,21,.12)}
+#collections .home-sample-card img{aspect-ratio:4/4.7;object-fit:cover}
+#collections .home-sample-card figcaption{padding:12px 7px 6px;font-size:10px;letter-spacing:.65px;color:#6f5a49}
+@media(max-width:900px){
+ #collections .cards>.card img{height:270px}
+ #collections .cards>.card .card-body{padding:20px}
+ #collections .home-samples{margin-top:48px;padding-top:38px}
+}
+@media(max-width:560px){
+ #collections .cards{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:12px !important}
+ #collections .cards>.card img{height:auto;aspect-ratio:4/4.5}
+ #collections .cards>.card .card-body{padding:15px 13px 17px}
+ #collections .cards>.card .card-body small{font-size:8px;letter-spacing:1.25px}
+ #collections .cards>.card .card-body small:before{width:11px}
+ #collections .cards>.card .card-body h3{font-size:19px;line-height:1.2;margin:9px 0 7px}
+ #collections .cards>.card .card-body p{font-size:10px;line-height:1.65}
+ #collections .cards>.card .collection-link{font-size:8px;letter-spacing:.7px}
+ #collections .home-samples{margin-top:40px;padding-top:30px}
+ #collections .home-sample-group+.home-sample-group{margin-top:32px}
+ #collections .home-sample-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ #collections .home-sample-card{padding:6px}
+ #collections .home-sample-card figcaption{font-size:9px;padding:9px 4px 4px}
+}
+@media(prefers-reduced-motion:reduce){
+ #collections .cards>.card,#collections .cards>.card img,#collections .home-sample-card{transition:none!important}
+ #collections .cards>.card:hover,#collections .home-sample-card:hover{transform:none}
+}
+</style>
+
 </head>
 <body>
 <div class="announcement" data-en="Considered gifts for the moments that matter" data-id="Hadiah istimewa untuk setiap momen yang berarti">Hadiah istimewa untuk setiap momen yang berarti</div>
