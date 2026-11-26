@@ -26,3 +26,24 @@ The GitHub Actions workflow at `.github/workflows/pages.yml` publishes the repos
 - `preview.html` — retained design preview.
 - `images/` — local product and collection photography.
 - `.github/workflows/pages.yml` — GitHub Pages deployment workflow.
+
+## Order tracking and staff enquiries
+
+- Customer tracking: `tracking.html` (Bahasa Indonesia) and `en/tracking.html` (English).
+- Staff dashboard: `staff.html` (Bahasa Indonesia) and `en/staff.html` (English). These pages are not linked from the public navigation and require Supabase Auth sign-in plus a protected `app_metadata.role` of `staff` or `admin`.
+- Contact enquiries are submitted to the Supabase Edge Function and stored in the `public.enquiries` table.
+- Backend project: Supabase project `yrdyxkuxcfcopywyghao` (Tokyo region).
+- Edge Function: `order-api`. It handles verified customer tracking, enquiry submissions, and staff order/enquiry actions.
+- Database tables: `public.orders`, `public.order_status_history`, and `public.enquiries`. All public-schema tables have RLS enabled; customers do not have direct table access.
+- Customer tracking requires both an order reference and the email/phone verification value entered by staff when creating the order. Only customer-safe order fields and bilingual status history are returned.
+- Never put a Supabase secret/service-role key in this repository or browser code. The website uses only the Supabase publishable key; privileged operations run inside the Edge Function.
+
+### Staff onboarding (administrator action)
+
+1. Create staff accounts in Supabase Authentication. Do not allow public self-registration for staff.
+2. In the Supabase Dashboard, set the user's protected **app metadata** role to `staff` or `admin`. Do not use editable user metadata for authorization.
+3. Give the staff member the dashboard URL: `/staff.html` (Indonesian) or `/en/staff.html` (English).
+4. Staff create orders from the dashboard. The customer must enter the exact email address or phone value saved in the order's verification field to track it.
+5. Test with a real low-value/internal order before sharing tracking with customers.
+
+The database migration and Edge Function are deployed directly to the Supabase project. Never commit credentials or export customer records into the static GitHub Pages repository.
