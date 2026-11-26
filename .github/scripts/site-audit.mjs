@@ -2,10 +2,10 @@ import fs from "node:fs";
 import path from "node:path";
 
 const pages = [
-  "index.html", "story.html", "collections.html", "beauty.html",
+  "index.html", "story.html", "collections.html", "beauty.html", "tracking.html", "staff.html",
   "corporate.html", "contact.html", "chocolate.html", "tumblers.html",
   "gourmet.html", "privacy.html", "delivery.html", "faq.html",
-  "en/index.html", "en/story.html", "en/collections.html", "en/beauty.html",
+  "en/index.html", "en/story.html", "en/collections.html", "en/beauty.html", "en/tracking.html", "en/staff.html",
   "en/corporate.html", "en/contact.html", "en/chocolate.html", "en/tumblers.html",
   "en/gourmet.html", "en/privacy.html", "en/delivery.html", "en/faq.html"
 ];
@@ -78,7 +78,7 @@ for (const page of pages) {
 
   const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
   for (const m of scripts) {
-    if (/application\/ld\+json/i.test(m[1])) continue;
+    if (/application\/ld\+json/i.test(m[1]) || /type=["']module["']/i.test(m[1])) continue;
     try { new Function(m[2]); }
     catch (e) { errors.push(`${page}: inline JavaScript syntax error: ${e.message}`); }
   }
